@@ -15,15 +15,3 @@ makemigrations: ## make database migrations
 
 migrate: ## push migrations into the database
 	python manage.py migrate
-
-create-superuser: ## create super user for django admin
-	python manage.py createsuperuser
-
-start-celeryworker: ## start celery worker to process task
-	celery -A senndertask worker -l info
-
-start-celerybeat: ## start celery beat to run scheduled task
-	celery -A senndertask beat -l info
-
-start-redis: ## start redis server
-	redis-server
